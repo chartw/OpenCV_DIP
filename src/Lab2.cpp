@@ -9,18 +9,18 @@
 int main() {
 
 	//1
-	Mat src = imread("img/gear.jpg", 0); // ÀÌ¹ÌÁö ÀĞ±â
+	Mat src = imread("img/gear.jpg", 0); // ì´ë¯¸ì§€ ì½ê¸°
 	Mat dst = myGaussianFilter(src, 1);
 	Mat dst1 = myGaussianFilter(src, 10);
 
 	hconcat(src, dst, dst);
 	hconcat(dst, dst1, dst1);
-	imshow("Gaussian", dst1); // ÀÌ¹ÌÁö Ãâ·Â
-	waitKey(0); // Å° ÀÔ·Â ´ë±â(0: Å°°¡ ÀÔ·ÂµÉ ¶§ ±îÁö ÇÁ·Î±×·¥ ¸ØÃã)
-	destroyWindow("Gaussian"); // ÀÌ¹ÌÁö Ãâ·ÂÃ¢ Á¾·á
+	imshow("Gaussian", dst1); // ì´ë¯¸ì§€ ì¶œë ¥
+	waitKey(0); // í‚¤ ì…ë ¥ ëŒ€ê¸°(0: í‚¤ê°€ ì…ë ¥ë  ë•Œ ê¹Œì§€ í”„ë¡œê·¸ë¨ ë©ˆì¶¤)
+	destroyWindow("Gaussian"); // ì´ë¯¸ì§€ ì¶œë ¥ì°½ ì¢…ë£Œ
 
 	//2
-	src = imread("img/gear.jpg", 0); // ÀÌ¹ÌÁö ÀĞ±â
+	src = imread("img/gear.jpg", 0); // ì´ë¯¸ì§€ ì½ê¸°
 	dst = myGaussianFilter(src, 2);
 
 	Mat hst1 = GetHistogram(src);
@@ -33,21 +33,21 @@ int main() {
 	vconcat(hst1, hst2, hst2);
 	imshow("Histogram", hst2);
 	waitKey(0);
-	destroyWindow("Histogram"); // ÀÌ¹ÌÁö Ãâ·ÂÃ¢ Á¾·á
+	destroyWindow("Histogram"); // ì´ë¯¸ì§€ ì¶œë ¥ì°½ ì¢…ë£Œ
 
 	//3
-	src = imread("img/gear.jpg", 0); // ÀÌ¹ÌÁö ÀĞ±â
+	src = imread("img/gear.jpg", 0); // ì´ë¯¸ì§€ ì½ê¸°
 	SpreadPoints(src, 500, 0);
 	SpreadPoints(src, 500, 1);
 	dst = myGaussianFilter(src, 2);
 	
 	hconcat(src, dst, dst);
-	imshow("Noise Filtering", dst); // ÀÌ¹ÌÁö Ãâ·Â
-	waitKey(0); // Å° ÀÔ·Â ´ë±â(0: Å°°¡ ÀÔ·ÂµÉ ¶§ ±îÁö ÇÁ·Î±×·¥ ¸ØÃã)
-	destroyWindow("Noise Filtering"); // ÀÌ¹ÌÁö Ãâ·ÂÃ¢ Á¾·á
+	imshow("Noise Filtering", dst); // ì´ë¯¸ì§€ ì¶œë ¥
+	waitKey(0); // í‚¤ ì…ë ¥ ëŒ€ê¸°(0: í‚¤ê°€ ì…ë ¥ë  ë•Œ ê¹Œì§€ í”„ë¡œê·¸ë¨ ë©ˆì¶¤)
+	destroyWindow("Noise Filtering"); // ì´ë¯¸ì§€ ì¶œë ¥ì°½ ì¢…ë£Œ
 
 	//4
-	src = imread("img/gear.jpg", 0); // ÀÌ¹ÌÁö ÀĞ±â
+	src = imread("img/gear.jpg", 0); // ì´ë¯¸ì§€ ì½ê¸°
 	dst = mySobelFilter(src, 0);
 	dst1 = mySobelFilter(src, 1);
 	Mat dst2 = mySobelFilter(src, 2);
@@ -55,27 +55,27 @@ int main() {
 	hconcat(dst, dst1, dst1);
 	hconcat(dst1, dst2, dst2);
 
-	imshow("Source", src); // ÀÌ¹ÌÁö Ãâ·Âsss
-	imshow("Sobel", dst2); // ÀÌ¹ÌÁö Ãâ·Â
-	waitKey(0); // Å° ÀÔ·Â ´ë±â(0: Å°°¡ ÀÔ·ÂµÉ ¶§ ±îÁö ÇÁ·Î±×·¥ ¸ØÃã)
-	destroyWindow("Source"); // ÀÌ¹ÌÁö Ãâ·ÂÃ¢ Á¾·á
-	destroyWindow("Sobel"); // ÀÌ¹ÌÁö Ãâ·ÂÃ¢ Á¾·á
+	imshow("Source", src); // ì´ë¯¸ì§€ ì¶œë ¥
+	imshow("Sobel", dst2); // ì´ë¯¸ì§€ ì¶œë ¥
+	waitKey(0); // í‚¤ ì…ë ¥ ëŒ€ê¸°(0: í‚¤ê°€ ì…ë ¥ë  ë•Œ ê¹Œì§€ í”„ë¡œê·¸ë¨ ë©ˆì¶¤)
+	destroyWindow("Source"); // ì´ë¯¸ì§€ ì¶œë ¥ì°½ ì¢…ë£Œ
+	destroyWindow("Sobel"); // ì´ë¯¸ì§€ ì¶œë ¥ì°½ ì¢…ë£Œ
 
 	//5
-	src = imread("img/gear.jpg", 1); // ÀÌ¹ÌÁö ÀĞ±â
+	src = imread("img/gear.jpg", 1); // ì´ë¯¸ì§€ ì½ê¸°
 	vector<Mat> VecGauss = myGaussianPyramid(src);
 
 	for (int i = 0; i < VecGauss.size(); i++)
 	{
 		string wname = "Gaussian Pyramid" + to_string(i);
-		imshow(wname, VecGauss[i]); // ÀÌ¹ÌÁö Ãâ·Â
+		imshow(wname, VecGauss[i]); // ì´ë¯¸ì§€ ì¶œë ¥
 	}
-	waitKey(0); // Å° ÀÔ·Â ´ë±â(0: Å°°¡ ÀÔ·ÂµÉ ¶§ ±îÁö ÇÁ·Î±×·¥ ¸ØÃã)
+	waitKey(0); // í‚¤ ì…ë ¥ ëŒ€ê¸°(0: í‚¤ê°€ ì…ë ¥ë  ë•Œ ê¹Œì§€ í”„ë¡œê·¸ë¨ ë©ˆì¶¤)
 
 	for (int i = 0; i < VecGauss.size(); i++)
 	{
 		string wname = "Gaussian Pyramid" + to_string(i);
-		destroyWindow(wname); // ÀÌ¹ÌÁö Ãâ·ÂÃ¢ Á¾·á
+		destroyWindow(wname); // ì´ë¯¸ì§€ ì¶œë ¥ì°½ ì¢…ë£Œ
 	}
 
 	//6
@@ -85,7 +85,7 @@ int main() {
 	for (int i = 0; i < VecLap.size(); i++)
 	{
 		string wname = "Lap Pyramid" + to_string(i);
-		imshow(wname, VecLap[i]); // ÀÌ¹ÌÁö Ãâ·Â
+		imshow(wname, VecLap[i]); // ì´ë¯¸ì§€ ì¶œë ¥
 	}
 
 	for (int i = 0; i < VecLap.size(); i++)
@@ -97,7 +97,7 @@ int main() {
 		else
 		{
 			resize(dst, dst, VecLap[i].size());
-			dst = dst + VecLap[i] - 128;			// ¿À¹öÇÃ·Î¿ì ¹æÁö¸¦ À§ÇØ ´õÇß´ø °ªÀ» »©ÁÜ
+			dst = dst + VecLap[i] - 128;			// ì˜¤ë²„í”Œë¡œìš° ë°©ì§€ë¥¼ ìœ„í•´ ë”í–ˆë˜ ê°’ì„ ë¹¼ì¤Œ
 		}
 		string wname = "Restore" + to_string(i);
 		imshow(wname, dst);
@@ -107,10 +107,10 @@ int main() {
 	for (int i = 0; i < VecLap.size(); i++)
 	{
 		string wname = "Lap Pyramid" + to_string(i);
-		destroyWindow(wname); // ÀÌ¹ÌÁö Ãâ·ÂÃ¢ Á¾·á
+		destroyWindow(wname); // ì´ë¯¸ì§€ ì¶œë ¥ì°½ ì¢…ë£Œ
 
 		wname = "Restore" + to_string(i);
-		destroyWindow(wname); // ÀÌ¹ÌÁö Ãâ·ÂÃ¢ Á¾·á
+		destroyWindow(wname); // ì´ë¯¸ì§€ ì¶œë ¥ì°½ ì¢…ë£Œ
 	}
 
 	return 0;
